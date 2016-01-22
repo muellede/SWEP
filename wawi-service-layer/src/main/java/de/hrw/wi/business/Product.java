@@ -3,7 +3,6 @@
  */
 package de.hrw.wi.business;
 
-import java.math.BigDecimal;
 
 /**
  * @author andriesc
@@ -22,8 +21,8 @@ public class Product {
 	private String productCode;
 
 	/**
-	 * size speichert die Größe des Produktes als Zahl. Ein Produkt kann
-	 * beispielsweise die Größe 1, 5, 8 oder 24 haben. Die Größe darf nicht 0
+	 * size speichert die Grï¿½ï¿½e des Produktes als Zahl. Ein Produkt kann
+	 * beispielsweise die Grï¿½ï¿½e 1, 5, 8 oder 24 haben. Die Grï¿½ï¿½e darf nicht 0
 	 * und nicht negativ sein.
 	 */
 	private int size;

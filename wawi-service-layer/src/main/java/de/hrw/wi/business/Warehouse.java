@@ -5,42 +5,37 @@ import java.util.Set;
 /**
  * @author andriesc
  *
- *         Warehouse ist ein Lager. Bei der Erzeugung wird seine Größe
- *         angegeben: Ein Warehouse kann n Fächer der jeweils gleichen Größe k
+ *         Warehouse ist ein Lager. Bei der Erzeugung wird seine Grï¿½ï¿½e
+ *         angegeben: Ein Warehouse kann n Fï¿½cher der jeweils gleichen Grï¿½ï¿½e k
  *         enthalten.
  * 
- *         In einem Fach können jeweils nur Gegenstände eines Typs abgegelegt
+ *         In einem Fach kï¿½nnen jeweils nur Gegenstï¿½nde eines Typs abgegelegt
  *         werden, von diesem Gegenstand aber dann soviele, solange die Summe der
- *         Größe der Gegenstände nicht größer ist als die Größe des Faches.
+ *         Grï¿½ï¿½e der Gegenstï¿½nde nicht grï¿½ï¿½er ist als die Grï¿½ï¿½e des Faches.
  * 
- *         In ein Lager können Gegenstände eingelagert und ausgelagert werden.
+ *         In ein Lager kï¿½nnen Gegenstï¿½nde eingelagert und ausgelagert werden.
  * 
  *         Auf ein Warehouse soll niemals direkt zugegriffen werden, sondern nur
- *         über einen entsprechenden Service.
+ *         ï¿½ber einen entsprechenden Service.
  * 
  */
 public class Warehouse {
-	private int binSize;
-	private int maxBin;
-
 	/**
 	 * 
 	 */
 	public Warehouse(int numberOfBins, int sizeOfBins) {
-		this.binSize = sizeOfBins;
-		this.maxBin = numberOfBins;
 	}
 
 	/**
-	 * Die Methode ermittelt, welches Fach der nächste freie Lagerplatz ist,
-	 * wenn ich etwas der Größe size ablegen will.
+	 * Die Methode ermittelt, welches Fach der nï¿½chste freie Lagerplatz ist,
+	 * wenn ich etwas der Grï¿½ï¿½e size ablegen will.
 	 * 
 	 * @param size
-	 *            Größe des oder der Gegenstände, die ich ablegen will
+	 *            Grï¿½ï¿½e des oder der Gegenstï¿½nde, die ich ablegen will
 	 * 
-	 * @return Nummer des nächsten freien Lagerplatzes passender Größe. Die
-	 *         Lagerplätze werden bei 0 anfangend durchnummeriert. Ist kein
-	 *         Platz mehr frei, wird -1 zurückgegeben.
+	 * @return Nummer des nï¿½chsten freien Lagerplatzes passender Grï¿½ï¿½e. Die
+	 *         Lagerplï¿½tze werden bei 0 anfangend durchnummeriert. Ist kein
+	 *         Platz mehr frei, wird -1 zurï¿½ckgegeben.
 	 */
 	public int nextFreeBin(int size) {
 		// TODO implement this method
@@ -49,20 +44,20 @@ public class Warehouse {
 
 	/**
 	 * Lagert von einem Produkt die angegebene Anzahl in einem angegebenen
-	 * Lagerplatz ein. Wenn das Einlagern fehlschlägt, weil der Lagerplatz zu
-	 * klein ist für das Produkt und seine Anzahl, dann wird das Produkt gar
+	 * Lagerplatz ein. Wenn das Einlagern fehlschlï¿½gt, weil der Lagerplatz zu
+	 * klein ist fï¿½r das Produkt und seine Anzahl, dann wird das Produkt gar
 	 * nicht eingelagert. Gegebenenfalls muss man also die Anzahl des Produktes
-	 * anschließend in zwei oder mehrere neue Einlagerversuche aufteilen.
+	 * anschlieï¿½end in zwei oder mehrere neue Einlagerversuche aufteilen.
 	 * 
 	 * @param p
 	 *            Das einzulagernde Produkt
 	 * @param quantity
-	 *            Angabe, in welcher Stückanzahl das Produkt eingelagert werden
+	 *            Angabe, in welcher Stï¿½ckanzahl das Produkt eingelagert werden
 	 *            soll
 	 * @param bin
-	 *            der Ziel-Lagerplatz für die Einlagerung
-	 * @return gibt true zurück, wenn das Einlagern erfolgreich war oder false,
-	 *         wenn es nicht erfolgreich war (etwa Lagerplatz nicht groß genug)
+	 *            der Ziel-Lagerplatz fï¿½r die Einlagerung
+	 * @return gibt true zurï¿½ck, wenn das Einlagern erfolgreich war oder false,
+	 *         wenn es nicht erfolgreich war (etwa Lagerplatz nicht groï¿½ genug)
 	 */
 	public boolean placeIntoStock(Product p, int quantity, StorageBin bin) {
 		// TODO implement this method
@@ -71,7 +66,7 @@ public class Warehouse {
 
 	/**
 	 * Entnimmt von einem Produkt die angegebene Anzahl aus dem angegebenen
-	 * Lagerplatz. Wenn das Auslagern fehlschlägt weil etwa nicht genügend Stück
+	 * Lagerplatz. Wenn das Auslagern fehlschlï¿½gt weil etwa nicht genï¿½gend Stï¿½ck
 	 * des Produktes vorhanden sind, wird gar nichts aus dem Lager entnommen.
 	 * Gegebenenfalls muss also in einem weiteren Auslagerversuch versucht
 	 * werden, eine reduzierte Anzahl von Produkten zu entnehmen.
@@ -79,11 +74,11 @@ public class Warehouse {
 	 * @param p
 	 *            Das auszulagernde Produkt
 	 * @param quantity
-	 *            Angabe, in welcher Stückzahl das Produkt entnommen werden soll
+	 *            Angabe, in welcher Stï¿½ckzahl das Produkt entnommen werden soll
 	 * @param bin
-	 *            Der Lagerplatz, aus dem das Produkt in angegebener Stückzahl
+	 *            Der Lagerplatz, aus dem das Produkt in angegebener Stï¿½ckzahl
 	 *            entnommen werden soll
-	 * @return gibt true zurück, wenn das Auslagern erfolgreich war oder false,
+	 * @return gibt true zurï¿½ck, wenn das Auslagern erfolgreich war oder false,
 	 *         wenn es nicht erfolgreich war (Produkt nicht in ausreichender
 	 *         Anzahl vorhanden)
 	 */
@@ -94,7 +89,7 @@ public class Warehouse {
 
 	/**
 	 * 
-	 * Gibt aus, wie groß der Bestand in diesem Lager von dem jeweiligen Produkt
+	 * Gibt aus, wie groï¿½ der Bestand in diesem Lager von dem jeweiligen Produkt
 	 * ist.
 	 * 
 	 * @param p
@@ -110,7 +105,7 @@ public class Warehouse {
 	 * Gibt aus, wo im Lager das Produkt gespeichert ist.
 	 * 
 	 * @param p
-	 * @return Eine Menge von Lagerplätzen oder eine leere Menge, wenn das
+	 * @return Eine Menge von Lagerplï¿½tzen oder eine leere Menge, wenn das
 	 *         Produkt gar nicht vorhanden ist.
 	 */
 	public Set<StorageBin> retrieveBinsOf(Product p) {
